@@ -47,19 +47,5 @@ document.querySelector("#skip").addEventListener("click",function(){
 	console.log("Skipped Video by "+ video.currentTime);
 });
 document.querySelector("#mute").addEventListener("click",function(){
-	console.log("Mute Video");
-	video = document.querySelector("#player1")
-	
-	if(video.muted){
-		video.muted = false;
-		console.log("unMuted");
-	}
-	
-		video.muted = true;
-		console.log("Muted");
-	
-	
+	this.innerHTML = "Unmute";
 });
-function change(){
-	var elem = document.querySelector("#mute");
-}
