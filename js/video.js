@@ -70,7 +70,7 @@ document.querySelector("#vintage").addEventListener("click",function(){
 });
 document.querySelector("#orig").addEventListener("click",function(){
 	video.classList.remove("oldSchool");
-	console.log("Class is "+ video.classList)
+	console.log("Class is "+ video.classList+" Original")
 });
 
 slider.addEventListener('input',function(){
