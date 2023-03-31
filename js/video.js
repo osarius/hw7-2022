@@ -11,18 +11,15 @@ window.addEventListener("load", function() {//load has something to do, not in h
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
-	video = document.querySelector("#player1");
 	video.play();
-	console.log("play is " + video.play)
-	video.volume = 1;
-	console.log("volume is " + video.volume)
+	document.getElementById('volume').innerHTML = video.volume*100 +"%";
+	
 });//listen for something specifically on play, once happens do this.
 //
 document.querySelector("#pause").addEventListener("click",function(){
 	console.log("Pause Video");
 	video = document.querySelector("#player1");
 	video.pause();
-	console.log("It is paused? " + video.paused);
 });
 document.querySelector("#slower").addEventListener("click", function(){
 	console.log("Slowed Video");
@@ -52,14 +49,14 @@ document.querySelector("#mute").addEventListener("click",function(){
 	if(video.muted){
 		video.muted = false;
 		this.innerHTML = "Mute";
-		console.log("Sound is "+ video.muted)
-		console.log("Mute/Unmute button text is "+ this.innerHTML)
+		
+		console.log("Unmute")
 	}
 	else{
 		video.muted = true;
 		this.innerHTML = "Unmute";
-		console.log("Sound is "+ video.muted)
-		console.log("Mute/Unmute button text is "+ this.innerHTML)
+		
+		console.log("Mute")
 	}
 	
 });
@@ -73,10 +70,11 @@ document.querySelector("#orig").addEventListener("click",function(){
 	console.log("Class is "+ video.classList+" Original")
 });
 
-slider.addEventListener('input',function(){
+slider.addEventListener('change',function(){
 	document.getElementById('player1').volume = slider.value / 100;
-	document.getElementById('volume').innerHTML = slider.value +"%";
-	console.log("Volume is "+ document.getElementById('volume').innerHTML);
+	console.log("Current value is "+document.getElementById('player1').volume);
+	document.getElementById('volume').innerHTML = slider.value +"%";//more console logs
+	console.log(document.getElementById('volume').innerHTML);
 });
 
 	
